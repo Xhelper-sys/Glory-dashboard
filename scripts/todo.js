@@ -1,6 +1,11 @@
-function addText(){
-  const inputText = document.querySelector('.js-input-search').value;
-  const paragraphe = document.querySelector('.put-text');
-  paragraphe.innerHTML = inputText;
-  document.querySelector('.js-input-search').value = '';
+function addTask(){
+  const inputElement = document.querySelector('.js-input');
+  let divTextElement = document.querySelector('.js-todo');
+
+  const textInInput = inputElement.value;
+
+  divTextElement.innerHTML += `<p>${textInInput}</p>`;
+
+  inputElement.value = '';
+
 }
