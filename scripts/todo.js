@@ -1,12 +1,86 @@
+const toDoList = [];
+
+/*
+{name: 'name of todolist', date: 'date of todolist', priority: 'priority of todolist'};
+*/
+
+document.querySelector('.js-add-button').addEventListener('click', () => {addTask()});
+
 function addTask(){
-  const inputElement = document.querySelector('.js-input');
-  let divTextElement = document.querySelector('.js-todo');
+  const inputElementDescription = document.querySelector('.js-task-name-input');
+  const inputElementDate = document.querySelector('.js-date-input-add');
+  const textElement = document.querySelector('.js-priority-button');
 
-  const textInInput = inputElement.value;
+  const newTask = {};
+  if (inputElementDescription.value != ''){
+    newTask.description = inputElementDescription.value;
+    newTask['date to due'] = inputElementDate.value;
+    newTask.priority = textElement.innerHTML;
 
-  divTextElement.innerHTML += `<p>${textInInput}</p>`;
+    toDoList.push(newTask);
+    console.log('--prechargement--'); 
+    console.log(toDoList);
+  }
 
-  inputElement.value = '';
+  const taskBox = document.querySelector('.js-task-container');
+  let innerTaskBoxHtml = '';
+
+  toDoList.forEach(taskObject =>{
+    const html = `
+                <div class="task">
+                  <div class="task-box">
+                    <p class="description-text">
+                      ${taskObject.description}
+                    </p>
+                    <p class="date-text">
+                      ${taskObject['date to due']}
+                    </p>
+                    <p class="priority-text">
+                      ${taskObject.priority}
+                    </p>
+                  </div>
+                  <button class="remove-button js-remove-button">
+                    Remove task
+                  </button>
+                </div>`
+    innerTaskBoxHtml += html;
+  });
+
+  taskBox.innerHTML = innerTaskBoxHtml;
+
+  document.querySelectorAll('.js-remove-button').forEach((deleteButton, index) => {
+      deleteButton.addEventListener('click', ()=> {
+        console.log(document.querySelectorAll('.js-remove-button'));
+        toDoList.splice(index, 1);
+        console.log(toDoList);
+        addTask();
+      })
+    })
+
+  inputElementDescription.value = '';
+  inputElementDate.value = '';
+  textElement.innerHTML = 'Low';
+  if (textElement.classList.contains('orange-medium-priority-button')){
+    textElement.classList.remove('orange-medium-priority-button');
+    textElement.classList.add('green-low-priority-button');
+
+    for (let i = 1; i<7; i++){
+      let circle = document.querySelector(`.js-around-button-${i}`);
+      circle.classList.remove('color-circle-orange');
+      circle.classList.add('color-circle-green');
+    }
+  } else if (textElement.classList.contains('red-hight-priority-button')){
+    textElement.classList.remove('red-hight-priority-button');
+    textElement.classList.add('green-low-priority-button');
+
+    for (let i = 1; i<7; i++){
+      let circle = document.querySelector(`.js-around-button-${i}`);
+      circle.classList.remove('color-circle-red');
+      circle.classList.add('color-circle-green');
+    }
+  }
+
+
 
 }
 

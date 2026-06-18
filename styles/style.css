@@ -135,6 +135,16 @@ p {
   margin-bottom: 1.8rem;
 }
 
+.header-todolist-task-section {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  margin-bottom: 1.8rem;
+  height: 10%;
+}
+
 /*
 .text-header-todolist-control {
 }
@@ -159,6 +169,7 @@ p {
   border-radius: 1.2rem;
   padding: 1rem;
   margin-top: 1.6rem;
+  flex-direction: column;
 }
 
 .add-box-container, .delete-box-container {
@@ -509,4 +520,145 @@ p {
 
 .color-circle-red {
   background-color: rgb(219, 49, 49);
+}
+
+.task-logo, .lamp-logo {
+  width: 1.4rem;
+}
+
+.task-logo {
+  margin-left: 0.6rem;
+}
+
+
+.task-box-main-container {
+  display: flex;
+  flex-direction: column;
+  background-color: rgb(62, 60, 66);
+  padding: 0.8rem 0.8rem;
+  border-radius: 1.2rem;
+  height: 100%;
+}
+
+.task-box-header {
+  display: flex;
+  flex-direction: row;
+}
+
+.image-header-task {
+  width: 1rem;
+  margin: auto;
+}
+
+.info-about-task-box {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  margin-right: 0.2rem;
+}
+
+.description-text-task{
+  color:rgb(88, 90, 89);
+  font-size: 0.6rem;
+}
+
+.vertical-line {
+  width: 1px;
+  background-color: rgb(155, 152, 156);
+  height: 100%;
+  border-radius: 10px;
+}
+
+.number-of-task-box {
+  display: flex;
+  flex-direction: column;
+  padding: 0.2rem 0.5rem;
+}
+
+.number-of-task-text {
+  font-size: 0.5rem;
+}
+
+.number-of-task {
+  font-size: 0.7rem;
+  margin: auto;
+  margin-top: 0.4rem;
+}
+
+
+.header-number-of-priority-low {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.green-point-container-num{
+  background-color: rgb(39, 173, 44);
+  width: 4px;
+  height: 4px;
+  border-radius: 1rem;
+  margin-left: 0.2rem;
+}
+
+.orange-point-container-num{
+  background-color: rgb(219, 157, 49);
+  width: 4px;
+  height: 4px;
+  border-radius: 1rem;
+  margin-left: 0.2rem;
+}
+
+.red-point-container-num{
+  background-color: rgb(219, 49, 49);
+  width: 4px;
+  height: 4px;
+  border-radius: 1rem;
+  margin-left: 0.2rem;
+}
+
+.big-line-task {
+  height: 0.2px;
+  background-color: rgb(155, 152, 156);
+  width: 100%;
+  border-radius: 10px;
+  margin-top: 0.4rem;
+}
+
+.task-container {
+  display: flex;
+  flex-direction: column;
+}
+
+
+
+
+.task {
+  display: flex;
+  flex-direction: row;
+  column-gap: 0.8rem;
+  justify-content: center;
+  margin-top: 0.4rem;
+}
+
+.task-box {
+  display: grid;
+  grid-template-columns: 108px 104px 40px;
+  background-color: rgb(110, 107, 111);
+  border-radius: 4px;
+  padding: 1px 4px;
+  align-items: center;
+}
+
+.remove-button{
+  color: white;
+  border:none;
+  cursor:pointer;
+  background-color: rgb(219, 49, 49);
+  border-radius: 4px;
+  padding: 4px 4px;
+  font-size: 12px;
+}
+
+.description-text, .date-text, .priority-text{
+  font-size: 11px;
 }
