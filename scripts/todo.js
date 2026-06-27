@@ -1,5 +1,6 @@
-const toDoList = [];
+const toDoList = JSON.parse(localStorage.getItem('todolist')) || [];
 
+addTask();
 /*
 {name: 'name of todolist', date: 'date of todolist', priority: 'priority of todolist'};
 */
@@ -18,8 +19,7 @@ function addTask(){
     newTask.priority = textElement.innerHTML;
 
     toDoList.push(newTask);
-    console.log('--prechargement--'); 
-    console.log(toDoList);
+    localStorage.setItem('todolist', JSON.stringify(toDoList));
   }
 
   const taskBox = document.querySelector('.js-task-container');
@@ -52,7 +52,6 @@ function addTask(){
       deleteButton.addEventListener('click', ()=> {
         console.log(document.querySelectorAll('.js-remove-button'));
         toDoList.splice(index, 1);
-        console.log(toDoList);
         addTask();
       })
     })
